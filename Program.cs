@@ -39,7 +39,7 @@ namespace KestrelWeb
                         serverOptions.Limits.MinResponseDataRate =
                             new MinDataRate(bytesPerSecond: 100,
                                 gracePeriod: TimeSpan.FromSeconds(10));
-                        serverOptions.Listen(IPAddress.Loopback, 5000);
+                        serverOptions.Listen(IPAddress.Loopback, 80);
                         //serverOptions.Listen(IPAddress.Loopback, 5001,
                         //    listenOptions =>
                         //    {
