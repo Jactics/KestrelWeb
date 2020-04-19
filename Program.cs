@@ -59,6 +59,7 @@ namespace KestrelWeb
                         //    ListenOptions.ServerCertificate = "X509Certificate2";
                         //});
                     });
+                    webBuilder.UseUrls("http://0.0.0.0:5000");
                     webBuilder.UseStartup<Startup>();
                 });
     }
