@@ -30,36 +30,36 @@ namespace KestrelWeb
                 {
                     webBuilder.ConfigureKestrel(serverOptions =>
                     {
-                        serverOptions.Limits.MaxConcurrentConnections = 100;
-                        serverOptions.Limits.MaxConcurrentUpgradedConnections = 100;
-                        serverOptions.Limits.MaxRequestBodySize = 10 * 1024;
-                        serverOptions.Limits.MinRequestBodyDataRate =
-                            new MinDataRate(bytesPerSecond: 100,
-                                gracePeriod: TimeSpan.FromSeconds(10));
-                        serverOptions.Limits.MinResponseDataRate =
-                            new MinDataRate(bytesPerSecond: 100,
-                                gracePeriod: TimeSpan.FromSeconds(10));
-                        serverOptions.Listen(IPAddress.Loopback, 80);
-                        //serverOptions.Listen(IPAddress.Loopback, 5001,
-                        //    listenOptions =>
-                        //    {
-                        //        listenOptions.UseHttps("testCert.pfx",
-                        //            "testPassword");
-                        //    });
-                        serverOptions.Limits.KeepAliveTimeout =
-                            TimeSpan.FromMinutes(2);
-                        serverOptions.Limits.RequestHeadersTimeout =
-                            TimeSpan.FromMinutes(1);
-                        serverOptions.ConfigureEndpointDefaults(listenOptions =>
-                        {
+                        //serverOptions.Limits.MaxConcurrentConnections = 100;
+                        //serverOptions.Limits.MaxConcurrentUpgradedConnections = 100;
+                        //serverOptions.Limits.MaxRequestBodySize = 10 * 1024;
+                        //serverOptions.Limits.MinRequestBodyDataRate =
+                        //    new MinDataRate(bytesPerSecond: 100,
+                        //        gracePeriod: TimeSpan.FromSeconds(10));
+                        //serverOptions.Limits.MinResponseDataRate =
+                        //    new MinDataRate(bytesPerSecond: 100,
+                        //        gracePeriod: TimeSpan.FromSeconds(10));
+                        //serverOptions.Listen(IPAddress.Loopback, 5000);
+                        ////serverOptions.Listen(IPAddress.Loopback, 5001,
+                        ////    listenOptions =>
+                        ////    {
+                        ////        listenOptions.UseHttps("testCert.pfx",
+                        ////            "testPassword");
+                        ////    });
+                        //serverOptions.Limits.KeepAliveTimeout =
+                        //    TimeSpan.FromMinutes(2);
+                        //serverOptions.Limits.RequestHeadersTimeout =
+                        //    TimeSpan.FromMinutes(1);
+                        //serverOptions.ConfigureEndpointDefaults(listenOptions =>
+                        //{
 
-                        });
+                        //});
                         //serverOptions.ConfigureHttpsDefaults(ListenOptions =>
                         //{
                         //    ListenOptions.ServerCertificate = "X509Certificate2";
                         //});
                     });
-                    webBuilder.UseUrls("http://0.0.0.0:80");
+                    webBuilder.UseUrls("http://0.0.0.0:5000");
                     webBuilder.UseStartup<Startup>();
                 });
     }
